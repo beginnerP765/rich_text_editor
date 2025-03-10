@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リッチテキストエディタ</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="toolbar">
+            <input type="button" value="h1" id="h1_btn">
+            <input type="button" value="h2" id="h2_btn">
+            <input type="button" value="h3" id="h3_btn">
+            <input type="button" value="箇条書きリスト" id="ul_btn">
+            <input type="button" value="表を挿入" id="table_btn">
+            <input type="button" value="リンク" id="link_btn">
+            <input type="button" value="画像" id="image_btn">
+            <input type="button" value="文字の色の変更" id="color_btn">
+            <input type="color" id="color">
+            <input type="button" value="色のリセット" id="remove_span_btn">
+        </div>
+        <div id="editor" contenteditable="true"></div>
+        <input type="hidden" id="content" name="content">
+    </div>
+
+    <script>
+      // 初期化時に<h1>タグを挿入
+      document.addEventListener('DOMContentLoaded', function() {
+        const editor = document.getElementById('editor');
+        if (editor.innerHTML.trim() === '') {
+          editor.innerHTML = '<h1>タイトル</h1>';
+        }
+      });
+  </script>
+</body>
+</html>
